@@ -143,3 +143,10 @@ $ jj branch create test -r @-
 # Push the branch to GitHub (pushes only `bar`)
 $ jj git push
 ```
+
+## GitHub リポジトリの変更を取り込む
+
+```zsh
+jj git fetch
+jj rebase -d $main_branch
+```
