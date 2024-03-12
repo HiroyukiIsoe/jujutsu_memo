@@ -117,3 +117,29 @@ Parent commit: qvzzqoso 90a2af3b セットアップ方法の追記
 ```zsh
 jj squash
 ```
+
+## GitHub のリポジトリに変更を Push する
+
+### ブランチ名を指定しない方法
+
+```zsh
+# mainブランチから新しい変更を始める
+jj new main
+# 変更をコミットして記録する
+jj commit -m 'hogehoge'
+# GitHubへPushする
+# ブランチ名は自動で
+jj git push -c @-
+```
+
+### ブランチ名を指定する方法
+
+```zsh
+jj new main
+
+jj commit -m 'hogehoge'
+# コミット内容を含むブランチを作成する
+$ jj branch create test -r @-
+# Push the branch to GitHub (pushes only `bar`)
+$ jj git push
+```
